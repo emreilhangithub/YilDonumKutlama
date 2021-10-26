@@ -5,9 +5,8 @@ using System.Net;
 using System.Net.Mail;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
 
-namespace YilDonumKutlama.WinForm.Helper
+namespace YilDonumKutlama.WinServis.Helper
 {
    public class MailHelper
     {
@@ -18,8 +17,8 @@ namespace YilDonumKutlama.WinForm.Helper
                 SmtpClient smtpserver = new SmtpClient();
                 MailMessage mail = new MailMessage();
                 DateTime tarih = DateTime.Now; //string tarih aldık
-                string mailadresim = ("gondericimailadresi");
-                string sifre = ("gondericisifre");
+                string mailadresim = ("gonderici mail");
+                string sifre = ("gonderici sifre");
                 string smtpsrvr = "smtp.gmail.com";
                 string konu = ("Yıl Dönümü hk.");
                 string yaz = (gelenYaz);
@@ -30,14 +29,13 @@ namespace YilDonumKutlama.WinForm.Helper
                 smtpserver.EnableSsl = true;
 
                 mail.From = new MailAddress(mailadresim);
-                mail.To.Add("gonderilecekmailadresi");
+                mail.To.Add("gonderilecek mail adresi");
                 mail.Subject = konu;
                 mail.Body = yaz;
 
                 smtpserver.Send(mail);
 
-                DialogResult bilgi = new DialogResult();
-                LogHelper.Log(string.Concat("Girmiş olduğunuz bilgiler uyuşuyor bilgileriniz mail adresinize başarılı bir şekilde gönderilmiştir", bilgi));
+                LogHelper.Log(string.Concat("Girmiş olduğunuz bilgiler uyuşuyor bilgileriniz mail adresinize başarılı bir şekilde gönderilmiştir",""));
             }
             catch (Exception Hata)
             {

@@ -72,7 +72,6 @@
     <Compile Include="Helper\YilDonumleri.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Helper\MailHelper.cs" />
     <EmbeddedResource Include="FrmGiris.resx">
       <DependentUpon>FrmGiris.cs</DependentUpon>
     </EmbeddedResource>
